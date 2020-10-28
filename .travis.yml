@@ -1,4 +1,12 @@
 language: java
 jdk:
 - openjdk14
-script: ant build
+
+addons:
+  sonarcloud:
+    organization: "marinacalcaura"
+    token: "1266f48283ed20a2efc87ccf337fc340c3eb5659"
+
+script:
+- ant build
+- sonar-scanner
